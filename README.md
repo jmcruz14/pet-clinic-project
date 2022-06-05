@@ -34,7 +34,7 @@ Input the following line of code in your terminal
 ```sh
 python3 -m virtualenv <pathname/to/folder>
 ```
-As an example, with my folder labeled as "venv_personal_project", we want to put the file inside a venv folder called "projectvenv_folder. We have:
+As an example, with my folder labeled as "venv_personal_project", we want to put the file inside a venv folder called "projectvenv_folder". We have:
 ```sh
 python3 -m virtualenv ~/Desktop/venv_personal_project/projectvenv_folder
 ```
