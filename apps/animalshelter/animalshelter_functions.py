@@ -213,7 +213,7 @@ def submitsituationer(admindata, submitbtn, closebtn, situationerdate, sitcount,
 
                 # Add Event
                 event_result = "Pending"
-                event_name = "Situationer" # Change later by either removing this column in SQL or merge with event type
+                event_name = "Situationer"
 
                 add_event_sql = """
                 INSERT INTO event(event_n, admin_n, event_m, event_type_n, event_r, event_del_ind)
@@ -370,7 +370,7 @@ def animalcare_scheduleinterview(shelterdata, submitbtn, continuebtn, interviewd
 
             # Add Event
             event_result = "Pending"
-            event_name = "Situationer" # Change later by either removing this column in SQL or merge with event type
+            event_name = "Adopter Interview" # Change later by either removing this column in SQL or merge with event type
 
             add_event_sql = """
             INSERT INTO event(event_n, admin_n, event_m, event_type_n, event_r, event_del_ind)
@@ -417,6 +417,7 @@ def animalcare_scheduleinterview(shelterdata, submitbtn, continuebtn, interviewd
         raise PreventUpdate
 
 # Dropdown: Adopter Interview - Select Adopter
+# Select Adopter with a Currently Scheduled Interview
 @app.callback(
     [
         Output('adpt_interviewlist', 'options')

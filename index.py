@@ -1,3 +1,4 @@
+#%%index
 from re import S
 import dash
 import dash_bootstrap_components as dbc
@@ -884,11 +885,10 @@ def show_adoption_history(pathname, search, successbtn, pendingbtn, failbtn):
             print('history mode:', history_mode)
 
             if history_mode == 'success' and successbtn:
-               # Work on success case
 
                 sql = """
                 SELECT a.adopt_order_n, ad.adopter_m, ad.adopter_l, ad.adopter_no, 
-                p.pet_m, p.pet_b, p.pet_s, a.adopt_order_r, a.adopt_order_c
+                p.pet_m, p.pet_b, p.pet_s, a.adopt_order_r, a.adopt_order_c, a.adopt_order_trans_date
                 from adoption a INNER JOIN pet p ON p.pet_n = a.pet_n
                 INNER JOIN adopter ad ON a.adopter_n = ad.adopter_n
                 WHERE adopt_order_del_ind = False
@@ -899,7 +899,7 @@ def show_adoption_history(pathname, search, successbtn, pendingbtn, failbtn):
                 values = ['Y']
 
                 cols = ['Adopt Order #', 'Adopter Name', 'Adopter Address', 'Adopter No.',
-                'Pet Name', 'Pet Breed', 'Pet Sex', 'Result', 'Adoption Cost']
+                'Pet Name', 'Pet Breed', 'Pet Sex', 'Result', 'Adoption Cost', 'Transaction Date']
 
                 main_df = db.querydatafromdatabase(sql, values, cols)
 
@@ -934,7 +934,7 @@ def show_adoption_history(pathname, search, successbtn, pendingbtn, failbtn):
                     main_df = pd.DataFrame.from_dict(data_dict)
 
                     main_df = main_df[['Adopt Order #', 'Adopter Name', 'Adopter Address', 'Adopter No.',
-                    'Pet Name', 'Pet Breed', 'Pet Sex', 'Result', 'Adoption Cost', 'Action']]
+                    'Pet Name', 'Pet Breed', 'Pet Sex', 'Result', 'Adoption Cost', 'Transaction Date', 'Action']]
 
                     main_df.sort_values(by='Adopt Order #', inplace = True)
                     main_df.drop(columns=['Result'], inplace = True)
@@ -1646,4 +1646,7 @@ def submitadoptionorder(shelterdata, submitbtn,
 if __name__=='__main__':
 
     webbrowser.open('http://127.0.0.1:8050/', new=0, autoraise=True)
--    app.run_server(debug=True)
+    app.run_server(debug=True)
+
+# %%
+
