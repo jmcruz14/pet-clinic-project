@@ -1,11 +1,20 @@
 # Lara's Ark
 ##### Hypothetical Pet Clinic Project for Information Systems II requirement
 
+### Brief Description
+Hello! This is a repository containing a project website which I worked on for an Information Systems class in my university. I'm just gonna leave the code along with the files here since I no longer have any use for them, but for anyone who sees this, feel free to clone the repo and assess and improve the code as you see fit.
+
+Certainly enjoyed working on this as this was mostly a solo endeavor I embarked on 
+
+##### Stack
+- Dash Python
+- Plotly
+
 ### Installation Guide
 
 #### Preliminary Requirements
 1. You first need to download the following before being able to execute the file.
-- Install Python 3.7.9 using ![this download link](https://www.python.org/downloads/release/python-379/)
+- Install Python 3.7.9 using [this download link](https://www.python.org/downloads/release/python-379/)
 - Using your Terminal application, install virtualenv and pip3
 
 ```sh
@@ -22,7 +31,7 @@ python3 -m pip install --upgrade pip
 ```
 This should enable you to use pip3 as a command in the command line (terminal).
 
-- Download the Git package by following the instructions from ![this website](https://git-scm.com/downloads) depending on the OS that you're currently using.
+- Download the Git package by following the instructions from [this website](https://git-scm.com/downloads) depending on the OS that you're currently using.
 - Install Visual Studio Code, PostgreSQL, ang pgAdmin4 if you haven't already.
 
 2. Once both packages are secured, the first step is set up a virtual environment folder where you will be placing the files located in this repository onto that directory.
